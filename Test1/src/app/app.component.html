@@ -1,0 +1,26 @@
+<div class="parent">
+  <div class="post-area gap-4">
+    <h1>Post Area</h1> <br> <br>
+    <input type="text" placeholder="Post Heading" [(ngModel)]="postHeading"><br> <br>
+    <textarea cols="30" rows="8" placeholder="Post Description" [(ngModel)]="postDescription"></textarea><br> <br>
+    <input type="text" placeholder="Image URL" [(ngModel)]="imageURL"><br> <br>
+    <input type="text" placeholder="Post URL" [(ngModel)]="postURL"><br> <br>
+    <div class="checkBox">
+      <input type="checkbox" [(ngModel)]="addBackground">
+      Add Background
+    </div>
+  </div>
+
+
+  <div class="preview-area">
+    <h1>Preview Area</h1><br> <br>
+    
+      <h3 >
+        <span [class.addBackground]="addBackground">{{ postHeading }}</span></h3><br> <br>
+      <p>{{ postDescription }}</p><br> <br>
+      <img [src]="imageURL" alt="" ><br> <br>
+      <a [href]="postURL" target="_blank" [style.display]="postURL ? 'block': 'none' " >Link Text</a>
+      <br> <br>
+   
+  </div>
+</div>
